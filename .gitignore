@@ -75,3 +75,6 @@ typings/
 # ruby version and node version
 .nvmrc
 .ruby-version
+setup_doc.sh
+documentation.md
+.env
