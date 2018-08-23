@@ -1,3 +1,5 @@
 [
-  "20180809233934-create-user.js"
+  "20180809233934-create-user.js",
+  "20180813210629-create-token.js",
+  "20180816202440-create-phones.js"
 ]
