@@ -1,5 +1,4 @@
 "use strict";
-const bcrypt = require("bcrypt");
 const JWT = require("../lib/json_web_token");
 
 module.exports = (sequelize, DataTypes) => {
@@ -17,41 +16,6 @@ module.exports = (sequelize, DataTypes) => {
             msg: "ID can't be null"
           }
         }
-      },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            args: true,
-            msg: "Email can't be empty"
-          },
-          isEmail: {
-            args: true,
-            msg: "Incorrect email format"
-          },
-          notNull: {
-            args: false,
-            msg: "Email can't be null"
-          }
-        }
-      },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            args: true,
-            msg: "Password can't be empty"
-          },
-          notNull: {
-            args: false,
-            msg: "Password can't be null"
-          }
-        }
-      },
-      password_confirmation: {
-        type: DataTypes.VIRTUAL
       },
       player_id: {
         type: DataTypes.VIRTUAL
@@ -75,32 +39,19 @@ module.exports = (sequelize, DataTypes) => {
       indexes: [
         {
           unique: true,
-          fields: ["email"]
-        },
-        {
-          unique: true,
           fields: ["username"]
         }
       ],
-      hooks: {
-        beforeCreate: function(user, options) {
-          if (user.password != user.password_confirmation) {
-            throw new Error("Password confirmation doesn't match Password");
-          }
-
-          return bcrypt
-            .hash(user.password, bcrypt.genSaltSync(8))
-            .then(password => {
-              user.password = password;
-            });
-        }
-      },
       scopes: {
         byEmailOrUsername: function(value) {
           return {
             where: {
-              [sequelize.Op.or]: [{ username: value }, { email: value }]
+              [sequelize.Op.or]: [
+                { username: value },
+                { "$Member.email$": value }
+              ]
             },
+            include: [sequelize.models.Member],
             limit: 1
           };
         }
@@ -108,12 +59,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   //Instance methods
-  User.prototype.validPassword = function(password) {
-    if (bcrypt.compare(password, this.password)) {
-      return this;
-    } else {
-      throw new Error("Password incorrect");
-    }
+  User.prototype.valid_password = async function(password) {
+    let member = await this.getMember();
+    return member.valid_password(password);
   };
 
   User.prototype.serialize = function(opt) {
@@ -121,7 +69,7 @@ module.exports = (sequelize, DataTypes) => {
       {
         id: this.id,
         username: this.username,
-        email: this.email
+        email: this.Member.email
       },
       opt
     );
@@ -133,20 +81,14 @@ module.exports = (sequelize, DataTypes) => {
     };
   };
 
-  User.prototype.update_password = function(params) {
-    if (params.password != params.password_confirmation) {
-      throw new Error("Password confirmation doesn't match Password");
-    }
-
-    return bcrypt
-      .hash(params.password, bcrypt.genSaltSync(8))
-      .then(password => {
-        this.password = password;
-        return this.save();
-      });
+  User.prototype.update_password = async function(params) {
+    let member = await this.getMember();
+    return member.update_password(params);
   };
 
-  User.prototype.create_session_token = function() {
+  User.prototype.create_session_token = function(transaction) {
+    if (transaction)
+      return this.createToken({ type: "session" }, { transaction });
     return this.createToken({ type: "session" });
   };
 
@@ -155,10 +97,19 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   User.prototype.delete_session_token = function(token) {
-    return this.removeToken(token);
+    return token.destroy();
   };
 
-  User.prototype.create_phone = function(token) {
+  User.prototype.create_phone = function(token, transaction) {
+    if (transaction)
+      return this.createPhone(
+        {
+          session_token: token.value,
+          player_id: this.player_id
+        },
+        { transaction }
+      );
+
     return this.createPhone({
       session_token: token.value,
       player_id: this.player_id
@@ -174,28 +125,36 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function(models) {
     // associations can be defined here
-    User.hasMany(models.Token, {
+    User.hasOne(models.Member, {
       foreignKey: "memberable_id",
       constraints: false,
       scope: {
         memberable: "User"
+      }
+    });
+
+    User.hasMany(models.Token, {
+      foreignKey: "tokenizable_id",
+      constraints: false,
+      scope: {
+        tokenizable: "User"
       }
     });
 
     User.hasMany(models.Token.scope("session"), {
       as: "sessionTokens",
-      foreignKey: "memberable_id",
+      foreignKey: "tokenizable_id",
       constraints: false,
       scope: {
-        memberable: "User"
+        tokenizable: "User"
       }
     });
 
     User.hasMany(models.Phone, {
-      foreignKey: "memberable_id",
+      foreignKey: "phoneable_id",
       constraints: false,
       scope: {
-        memberable: "User"
+        phoneable: "User"
       }
     });
 

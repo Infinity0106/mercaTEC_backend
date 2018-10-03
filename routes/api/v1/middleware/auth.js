@@ -1,21 +1,21 @@
 var JWT = require("../../../../lib/json_web_token");
 var Token = require("../../../../models").Token;
 
-module.exports = function(req, res, next) {
-  var user_serialized = JWT.decrypt(req.headers.authorization);
-  Token.findOne({
-    where: {
-      memberable_id: user_serialized.id,
-      value: user_serialized.token
-    }
-  })
-    .then(token => {
-      req.locals = Object.assign({}, { token });
-      return token.getUser();
-    })
-    .then(current_user => {
-      req.locals = Object.assign(req.locals, { current_user });
-      next();
-    })
-    .catch(_ => res.status(401).send());
+module.exports = async function(req, res, next) {
+  try {
+    let user_serialized = JWT.decrypt(req.headers.authorization);
+    let token = await Token.findOne({
+      where: {
+        tokenizable_id: user_serialized.id,
+        value: user_serialized.token
+      }
+    });
+    let current_user = await token.getUser();
+
+    req.locals = Object.assign({}, { current_user, token });
+
+    next();
+  } catch (e) {
+    res.status(401).send();
+  }
 };

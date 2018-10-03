@@ -1,5 +1,11 @@
 [
   "20180809233934-create-user.js",
   "20180813210629-create-token.js",
-  "20180816202440-create-phones.js"
+  "20180816202440-create-phones.js",
+  "20180816230107-create-notification.js",
+  "20180920150925-create-member.js",
+  "20180920153149-create-administrator.js",
+  "20180920154116-UserRemoveAttr.js",
+  "20180920154347-TokenRenameAttr.js",
+  "20180920154542-PhoneRenameAttr.js"
 ]

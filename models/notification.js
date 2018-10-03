@@ -47,7 +47,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       delivery_time: DataTypes.DATE
     },
-    {}
+    {
+      schema: "public"
+    }
   );
   Notification.associate = function(models) {
     // associations can be defined here

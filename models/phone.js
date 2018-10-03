@@ -43,8 +43,8 @@ module.exports = (sequelize, DataTypes) => {
           }
         }
       },
-      memberable: DataTypes.STRING,
-      memberable_id: {
+      phoneable: DataTypes.STRING,
+      phoneable_id: {
         type: DataTypes.UUID,
         allowNull: false,
         validate: {
@@ -60,17 +60,18 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     {
+      schema: "public",
       indexes: [
         {
           unique: true,
-          fields: ["player_id", "session_token", "memberable_id"]
+          fields: ["player_id", "session_token", "phoneable_id"]
         }
       ]
     }
   );
   Phone.associate = function(models) {
     Phone.belongsTo(models.User, {
-      foreignKey: "memberable_id",
+      foreignKey: "phoneable_id",
       constraints: false,
       as: "User"
     });

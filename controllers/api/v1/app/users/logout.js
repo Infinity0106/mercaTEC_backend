@@ -1,14 +1,11 @@
-var JWT = require("../../../../../lib/json_web_token");
+module.exports = async function(req, res, next) {
+  try {
+    let user = req.locals.current_user;
 
-module.exports = function(req, res, next) {
-  var user = req.locals.current_user;
+    await user.delete_session_token(req.locals.token);
 
-  user
-    .delete_session_token(req.locals.token)
-    .then(() => {
-      res.status(204).send();
-    })
-    .catch(e => {
-      res.status(204).send();
-    });
+    res.status(204).send();
+  } catch (e) {
+    res.status(204).send();
+  }
 };

@@ -25,10 +25,11 @@ module.exports = (sequelize, DataTypes) => {
         }
       },
       type: DataTypes.ENUM("session", "forgot"),
-      memberable: DataTypes.STRING,
-      memberable_id: DataTypes.UUID
+      tokenizable: DataTypes.STRING,
+      tokenizable_id: DataTypes.UUID
     },
     {
+      schema: "public",
       indexes: [
         {
           unique: true,
@@ -72,9 +73,15 @@ module.exports = (sequelize, DataTypes) => {
   Token.associate = function(models) {
     // associations can be defined here
     Token.belongsTo(models.User, {
-      foreignKey: "memberable_id",
+      foreignKey: "tokenizable_id",
       constraints: false,
       as: "User"
+    });
+
+    Token.belongsTo(models.Administrator, {
+      foreignKey: "tokenizable_id",
+      constraints: false,
+      as: "Administrator"
     });
   };
   return Token;

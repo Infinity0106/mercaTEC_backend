@@ -1,5 +1,6 @@
 const helper = require("../../../../../helpers");
 const Models = require("../../../../../../models");
+const faker = require("faker");
 
 let password = faker.internet.password();
 let _params = {
@@ -7,111 +8,360 @@ let _params = {
     email: faker.internet.email(),
     password: password,
     username: faker.internet.userName(),
+    player_id: faker.random.uuid(),
     password_confirmation: password
   }
 };
 
 describe("POST /api/v1/signup", () => {
-  beforeEach(done => {
-    Models.User.sync({ force: true })
-      .then(() => Models.Token.sync({ force: true }))
-      .finally(done);
-  });
-
-  describe("with valid information", () => {
-    it("it should create a user", done => {
+  context("success creation", () => {
+    let request = function(done, callback) {
       chai
         .request(server)
         .post("/api/v1/signup")
         .set("x-application", "app")
         .send(_params)
-        .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.have.own.property("token");
-          Models.User.count()
-            .then(num => {
-              num.should.eql(1);
-            })
-            .finally(done);
-        });
+        .then(async res => {
+          callback(res);
+        })
+        .catch(done);
+    };
+
+    it("return http ok", done => {
+      request(done, res => {
+        res.status.should.be.eql(200);
+        done();
+      });
+    });
+
+    it("correct json data", done => {
+      request(done, res => {
+        res.body.should.have.own.property("token");
+        done();
+      });
+    });
+
+    it("creates one member", done => {
+      request(done, async res => {
+        let members = await Models.Member.count();
+        members.should.be.eql(1);
+        done();
+      });
+    });
+
+    it("creates one user", done => {
+      request(done, async res => {
+        let users = await Models.User.count();
+        users.should.be.eql(1);
+        done();
+      });
+    });
+
+    it("create a phone", done => {
+      request(done, async res => {
+        let users = await Models.Phone.count();
+        users.should.be.eql(0);
+        done();
+      });
     });
   });
 
-  describe("with different passwords", () => {
-    var params = JSON.parse(JSON.stringify(_params));
-    beforeEach(done => {
-      params.user.password_confirmation =
-        "1" + params.user.password_confirmation;
-      done();
+  context("success creation without player_id", () => {
+    let params;
+    before(() => {
+      params = JSON.parse(JSON.stringify(_params));
+      delete params.user.player_id;
     });
-
-    it("should return error different password", done => {
+    let request = function(done, callback) {
       chai
         .request(server)
         .post("/api/v1/signup")
         .set("x-application", "app")
         .send(params)
-        .end((err, res) => {
-          res.should.have.status(500);
-          res.body.should.have.deep.own.property("errors", [
-            "Password confirmation doesn't match Password"
-          ]);
-          Models.User.count()
-            .then(num => {
-              num.should.eql(0);
-            })
-            .finally(done);
-        });
+        .then(async res => {
+          callback(res);
+        })
+        .catch(done);
+    };
+
+    it("return http ok", done => {
+      request(done, res => {
+        res.status.should.be.eql(200);
+        done();
+      });
+    });
+
+    it("correct json data", done => {
+      request(done, res => {
+        res.body.should.have.own.property("token");
+        done();
+      });
+    });
+
+    it("creates one member", done => {
+      request(done, async res => {
+        let members = await Models.Member.count();
+        members.should.be.eql(1);
+        done();
+      });
+    });
+
+    it("creates one user", done => {
+      request(done, async res => {
+        let users = await Models.User.count();
+        users.should.be.eql(1);
+        done();
+      });
+    });
+
+    it("not create a phone", done => {
+      request(done, async res => {
+        let users = await Models.Phone.count();
+        users.should.be.eql(0);
+        done();
+      });
     });
   });
 
-  describe("with email already taken", () => {
-    var params = JSON.parse(JSON.stringify(_params));
-    beforeEach(done => {
-      Models.User.create(params.user).then(user => done());
-      params.user.username = "1" + params.user.username;
+  context("different password", () => {
+    let params;
+    before(() => {
+      params = JSON.parse(JSON.stringify(_params));
+      params.user.password = "1234567890";
     });
-
-    it("should return error email not unique", done => {
+    let request = function(done, callback) {
       chai
         .request(server)
         .post("/api/v1/signup")
         .set("x-application", "app")
         .send(params)
-        .end((err, res) => {
-          res.should.have.status(500);
-          res.body.should.have.deep.own.property("errors", [
-            "email must be unique"
-          ]);
-          Models.User.count()
-            .then(num => num.should.eql(1))
-            .then(() => done());
-        });
+        .then(async res => {
+          callback(res);
+        })
+        .catch(done);
+    };
+
+    it("return http server error", done => {
+      request(done, res => {
+        res.status.should.be.eql(500);
+        done();
+      });
+    });
+
+    it("with error key", done => {
+      request(done, res => {
+        res.body.should.have.own.property("errors");
+        done();
+      });
+    });
+
+    it("proper message", done => {
+      request(done, res => {
+        expect(res.body.errors[0]).to.have.string(
+          "Password confirmation doesn't match Password"
+        );
+        done();
+      });
+    });
+
+    it("doesn't create a user", done => {
+      request(done, async res => {
+        let users = await Models.User.count();
+        users.should.be.eql(0);
+        done();
+      });
+    });
+
+    it("doesn't create a member", done => {
+      request(done, async res => {
+        let members = await Models.Member.count();
+        members.should.be.eql(0);
+        done();
+      });
     });
   });
 
-  describe("with username already taken", () => {
-    var params = JSON.parse(JSON.stringify(_params));
-    beforeEach(done => {
-      Models.User.create(params.user).then(user => done());
-      params.user.email = "1" + params.user.email;
-    });
+  context("email already taken", () => {
+    let params;
+    beforeEach(async () => {
+      params = JSON.parse(JSON.stringify(_params));
+      try {
+        let user = await Models.User.create({
+          username: params.user.username,
+          player_id: params.user.player_id
+        });
+        let member = await Models.Member.create({
+          email: params.user.email,
+          password: params.user.password,
+          password_confirmation: params.user.password_confirmation
+        });
+        await user.setMember(member);
+        params.user.username += "1";
 
-    it("should return error username not unique", done => {
+        return Promise.resolve();
+      } catch (e) {
+        return Promise.reject(e);
+      }
+    });
+    let request = function(done, callback) {
       chai
         .request(server)
         .post("/api/v1/signup")
         .set("x-application", "app")
         .send(params)
-        .end((err, res) => {
-          res.should.have.status(500);
-          res.body.should.have.deep.own.property("errors", [
-            "username must be unique"
-          ]);
-          Models.User.count()
-            .then(num => num.should.eql(1))
-            .then(() => done());
+        .then(async res => {
+          callback(res);
+        })
+        .catch(done);
+    };
+
+    it("return http server error", done => {
+      request(done, res => {
+        res.status.should.be.eql(500);
+        done();
+      });
+    });
+
+    it("with error key", done => {
+      request(done, res => {
+        res.body.should.have.own.property("errors");
+        done();
+      });
+    });
+
+    it("proper message", done => {
+      request(done, res => {
+        expect(res.body.errors[0]).to.have.string("email must be unique");
+        done();
+      });
+    });
+
+    it("doesn't create a user", done => {
+      request(done, async res => {
+        let users = await Models.User.count();
+        users.should.be.eql(1);
+        done();
+      });
+    });
+
+    it("doesn't create a member", done => {
+      request(done, async res => {
+        let members = await Models.Member.count();
+        members.should.be.eql(1);
+        done();
+      });
+    });
+  });
+
+  context("username already taken", () => {
+    let params;
+    beforeEach(async () => {
+      params = JSON.parse(JSON.stringify(_params));
+      try {
+        let user = await Models.User.create({
+          username: params.user.username,
+          player_id: params.user.player_id
         });
+        let member = await Models.Member.create({
+          email: params.user.email,
+          password: params.user.password,
+          password_confirmation: params.user.password_confirmation
+        });
+        await user.setMember(member);
+        params.user.email = "1" + params.user.email;
+
+        return Promise.resolve();
+      } catch (e) {
+        return Promise.reject(e);
+      }
+    });
+    let request = function(done, callback) {
+      chai
+        .request(server)
+        .post("/api/v1/signup")
+        .set("x-application", "app")
+        .send(params)
+        .then(async res => {
+          callback(res);
+        })
+        .catch(done);
+    };
+
+    it("return http server error", done => {
+      request(done, res => {
+        res.status.should.be.eql(500);
+        done();
+      });
+    });
+
+    it("with error key", done => {
+      request(done, res => {
+        res.body.should.have.own.property("errors");
+        done();
+      });
+    });
+
+    it("proper message", done => {
+      request(done, res => {
+        expect(res.body.errors[0]).to.have.string("username must be unique");
+        done();
+      });
+    });
+
+    it("doesn't create a user", done => {
+      request(done, async res => {
+        let users = await Models.User.count();
+        users.should.be.eql(1);
+        done();
+      });
+    });
+
+    it("doesn't create a member", done => {
+      request(done, async res => {
+        let members = await Models.Member.count();
+        members.should.be.eql(1);
+        done();
+      });
+    });
+  });
+
+  context("invalid formats", () => {
+    let params;
+    beforeEach(async () => {
+      params = JSON.parse(JSON.stringify(_params));
+      params.user.email += "1";
+    });
+    let request = function(done, callback) {
+      chai
+        .request(server)
+        .post("/api/v1/signup")
+        .set("x-application", "app")
+        .send(params)
+        .then(async res => {
+          callback(res);
+        })
+        .catch(done);
+    };
+
+    it("return http server error", done => {
+      request(done, res => {
+        res.status.should.be.eql(500);
+        done();
+      });
+    });
+
+    it("with error key", done => {
+      request(done, res => {
+        res.body.should.have.own.property("errors");
+        done();
+      });
+    });
+
+    it("with proper error description", done => {
+      request(done, res => {
+        expect(res.body.errors[0]).to.have.string("Incorrect email format");
+        done();
+      });
     });
   });
 });
