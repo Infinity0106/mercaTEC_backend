@@ -7,8 +7,8 @@ addons:
   postgresql: "10"
   apt:
     packages:
-    - postgresql-10
-    - postgresql-client-10
+      - postgresql-10
+      - postgresql-client-10
 before_install:
   # Use default port
   - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/10/main/postgresql.conf

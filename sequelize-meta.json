@@ -7,5 +7,8 @@
   "20180920153149-create-administrator.js",
   "20180920154116-UserRemoveAttr.js",
   "20180920154347-TokenRenameAttr.js",
-  "20180920154542-PhoneRenameAttr.js"
+  "20180920154542-PhoneRenameAttr.js",
+  "20181010010949-create-products.js",
+  "20181010011105-create-images.js",
+  "20181010015348-AddUserIdProduct.js"
 ]

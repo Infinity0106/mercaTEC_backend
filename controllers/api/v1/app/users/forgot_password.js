@@ -11,7 +11,7 @@ module.exports = {
 
       let token = await user.create_recovery_token();
 
-      res.status(204).send(token.serialize());
+      res.status(200).send(token.serialize());
     } catch (e) {
       errors = e.errors
         ? e.errors.map(element => element.message)

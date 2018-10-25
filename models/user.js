@@ -169,6 +169,12 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "from_user_id",
       constraints: false
     });
+
+    User.hasMany(models.Product, {
+      as: "products",
+      foreignKey: "user_id",
+      constraints: false
+    });
   };
   return User;
 };

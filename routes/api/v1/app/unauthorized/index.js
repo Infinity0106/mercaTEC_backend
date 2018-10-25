@@ -1,9 +1,9 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
-var signup = require("./../../../../../controllers/api/v1/app/users/signup.js");
-var login = require("./../../../../../controllers/api/v1/app/users/login.js");
-var forgot = require("./../../../../../controllers/api/v1/app/users/forgot_password.js");
+let signup = require("./../../../../../controllers/api/v1/app/users/signup.js");
+let login = require("./../../../../../controllers/api/v1/app/users/login.js");
+let forgot = require("./../../../../../controllers/api/v1/app/users/forgot_password.js");
 
 router.post("/signup", signup);
 router.post("/login", login);

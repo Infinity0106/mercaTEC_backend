@@ -1,0 +1,18 @@
+{
+  "apps": [
+    {
+      "name": "mercaTEC",
+      "script": "bin/www",
+      "watch": true,
+      "ignore_watch": [
+        "node_modules",
+        "uploads",
+        "yarn.lock",
+        "package.json",
+        ".env",
+        "uploads"
+      ],
+      "instances": "1"
+    }
+  ]
+}

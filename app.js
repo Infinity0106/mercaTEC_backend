@@ -9,8 +9,10 @@ var RateLimit = require("express-rate-limit");
 
 //load env variables
 require("dotenv").load();
+global.__basedir = __dirname;
 
 var indexRouterV1 = require("./routes/api/v1/index");
+var shared_routes = require("./routes/shared_routes/index");
 
 var app = express();
 var limiter = new RateLimit({
@@ -45,8 +47,8 @@ if (process.env.NODE_ENV != "test") {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/", shared_routes);
 app.use("/api/v1", indexRouterV1);
 
 // catch 404 and forward to error handler
