@@ -51,7 +51,7 @@ module.exports = async function(req, res, next) {
     res.status(200).send(user.toJWT(token.value));
     await transaction.commit();
   } catch (e) {
-    transaction.rollback();
+    await transaction.rollback();
     errors = e.errors ? e.errors.map(element => element.message) : [e.message];
     res.status(500).send({ errors });
   }

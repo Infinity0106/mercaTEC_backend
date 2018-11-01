@@ -16,7 +16,7 @@ module.exports = async function(req, res, next) {
     res.send(204);
     await transaction.commit();
   } catch (e) {
-    transaction.rollback();
+    await transaction.rollback();
     errors = e.errors ? e.errors.map(element => element.message) : [e.message];
     res.status(500).send({ errors });
   }

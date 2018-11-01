@@ -6,6 +6,7 @@ var logger = require("morgan");
 var cors = require("cors");
 // var session = require("client-sessions");
 var RateLimit = require("express-rate-limit");
+var params = require("strong-params");
 
 //load env variables
 require("dotenv").load();
@@ -17,7 +18,7 @@ var shared_routes = require("./routes/shared_routes/index");
 var app = express();
 var limiter = new RateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
+  max: 10000, // limit each IP to 100 requests per windowMs
   delayMs: 0 // disable delaying - full speed until the max limit is reached
 });
 
@@ -25,6 +26,7 @@ app.enable("trust proxy");
 
 app.use(cors());
 app.use(limiter);
+app.use(params.expressMiddleware());
 // app.use(
 //   session({
 //     cookieName: "session",

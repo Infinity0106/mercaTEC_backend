@@ -10,5 +10,7 @@
   "20180920154542-PhoneRenameAttr.js",
   "20181010010949-create-products.js",
   "20181010011105-create-images.js",
-  "20181010015348-AddUserIdProduct.js"
+  "20181010015348-AddUserIdProduct.js",
+  "20181101012459-create-shopping-bags.js",
+  "20181101013138-create-shopping-bag-products.js"
 ]

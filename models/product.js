@@ -56,6 +56,22 @@ module.exports = (sequelize, DataTypes) => {
       }
     });
 
+    Product.hasMany(models.ShoppingBagProduct, {
+      foreignKey: "product_id",
+      constraints: false,
+      as: "ProductShoppingBag"
+    });
+
+    Product.belongsToMany(models.ShoppingBag, {
+      through: {
+        model: models.ShoppingBagProduct,
+        unique: false
+      },
+      constraints: false,
+      as: "InShoppingBags",
+      foreignKey: "product_id"
+    });
+
     Product.belongsTo(models.User, {
       foreignKey: "user_id",
       constraints: false,

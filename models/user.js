@@ -133,6 +133,11 @@ module.exports = (sequelize, DataTypes) => {
       }
     });
 
+    User.hasOne(models.ShoppingBag, {
+      foreignKey: "user_id",
+      constraints: false
+    });
+
     User.hasMany(models.Token, {
       foreignKey: "tokenizable_id",
       constraints: false,
