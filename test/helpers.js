@@ -29,6 +29,7 @@ module.exports = {
         "User",
         "Administrator",
         "Member",
+        "Token",
         "Phone",
         "Notification",
         "ShoppingBag",
