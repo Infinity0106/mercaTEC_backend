@@ -24,9 +24,20 @@ module.exports = {
   },
   sync_db: async function() {
     return await Promise.all(
-      Object.keys(Models).map(key => {
-        if (["sequelize", "Sequelize"].includes(key)) return null;
-        return Models[key].sync({ force: true });
+      [
+        //ORDER of creation with foreign keys dependency so it does not break
+        "User",
+        "Administrator",
+        "Member",
+        "Phone",
+        "Notification",
+        "ShoppingBag",
+        "ShoppingBagProduct",
+        "Product",
+        "Image",
+        "Goal"
+      ].map(key => {
+        return Models[key].sync({ force: true }).catch(console.error);
       })
     );
   },

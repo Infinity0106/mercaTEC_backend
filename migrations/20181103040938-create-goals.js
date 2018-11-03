@@ -1,22 +1,25 @@
 "use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("ShoppingBagProducts", {
+    return queryInterface.createTable("Goals", {
       id: {
-        allowNull: false,
         primaryKey: true,
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        validate: {
-          isUUID: 4
-        }
+        allowNull: false
       },
-      shopping_bag_id: {
+      user_id: {
         type: Sequelize.UUID,
         allowNull: false
       },
-      product_id: {
-        type: Sequelize.UUID,
+      price: {
+        type: Sequelize.DECIMAL(10, 2),
+        defaultValue: 0.0,
+        allowNull: false
+      },
+      actual: {
+        type: Sequelize.DECIMAL(10, 2),
+        defaultValue: 0.0,
         allowNull: false
       },
       createdAt: {
@@ -30,6 +33,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("ShoppingBagProducts");
+    return queryInterface.dropTable("Goals");
   }
 };

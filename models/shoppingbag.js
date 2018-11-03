@@ -32,7 +32,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     {
-      tableName: "shopping_bags",
       schema: "public"
     }
   );
@@ -50,8 +49,7 @@ module.exports = (sequelize, DataTypes) => {
     ShoppingBag.hasMany(models.ShoppingBagProduct, {
       foreignKey: "shopping_bag_id",
       constraints: false,
-      as: "ShoppingBagItems",
-      onDelete: "CASCADE"
+      as: "ShoppingBagItems"
     });
 
     ShoppingBag.belongsToMany(models.Product, {

@@ -49,14 +49,14 @@ describe("POST /api/v1/forgot", () => {
 
     it("returns http ok", done => {
       request(done, async res => {
-        res.status.should.be.eql(204);
+        res.status.should.be.eql(200);
         done();
       });
     });
 
     it("body should be empty", done => {
       request(done, async res => {
-        res.body.should.be.empty;
+        res.body.should.have.own.property("value");
         done();
       });
     });
@@ -77,14 +77,14 @@ describe("POST /api/v1/forgot", () => {
 
     it("returns http ok", done => {
       request(done, async res => {
-        res.status.should.be.eql(204);
+        res.status.should.be.eql(200);
         done();
       });
     });
 
     it("body should be empty", done => {
       request(done, async res => {
-        res.body.should.be.empty;
+        res.body.should.have.own.property("value");
         done();
       });
     });

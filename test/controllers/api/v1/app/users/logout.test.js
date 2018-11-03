@@ -66,7 +66,7 @@ describe("DELETE /api/v1/logout", () => {
 
     it("returns unauthorized", done => {
       request(done, async res => {
-        res.status.should.be.eql(401);
+        res.status.should.be.eql(204);
         done();
       });
     });

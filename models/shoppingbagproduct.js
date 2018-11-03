@@ -26,7 +26,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       schema: "public",
-      tableName: "shopping_bag_products",
       hooks: {
         afterCreate: async (instance, opt) => {
           // Do other stuff
@@ -66,8 +65,7 @@ module.exports = (sequelize, DataTypes) => {
     ShoppingBagProduct.belongsTo(models.ShoppingBag, {
       foreignKey: "shopping_bag_id",
       constraints: false,
-      as: "ShoppingBag",
-      onDelete: "CASCADE"
+      as: "ShoppingBag"
     });
 
     ShoppingBagProduct.belongsTo(models.Product, {

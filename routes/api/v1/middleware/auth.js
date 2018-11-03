@@ -16,6 +16,7 @@ module.exports = async function(req, res, next) {
 
     next();
   } catch (e) {
-    res.status(401).send();
+    let status = req.path == "/logout" ? 204 : 401;
+    res.status(status).send();
   }
 };
