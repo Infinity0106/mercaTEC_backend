@@ -36,7 +36,8 @@ module.exports = {
         "ShoppingBagProduct",
         "Product",
         "Image",
-        "Goal"
+        "Goal",
+        "Sell"
       ].map(key => {
         return Models[key].sync({ force: true }).catch(console.error);
       })
