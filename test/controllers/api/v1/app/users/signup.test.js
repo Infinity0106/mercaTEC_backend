@@ -41,21 +41,21 @@ describe("POST /api/v1/signup", () => {
       });
     });
 
-    it("creates one member", done => {
-      request(done, async res => {
-        let members = await Models.Member.count();
-        members.should.be.eql(1);
-        done();
-      });
-    });
+    // it("creates one member", done => {
+    //   request(done, async res => {
+    //     let members = await Models.Member.count();
+    //     members.should.be.eql(1);
+    //     done();
+    //   });
+    // });
 
-    it("creates one user", done => {
-      request(done, async res => {
-        let users = await Models.User.count();
-        users.should.be.eql(1);
-        done();
-      });
-    });
+    // it("creates one user", done => {
+    //   request(done, async res => {
+    //     let users = await Models.User.count();
+    //     users.should.be.eql(1);
+    //     done();
+    //   });
+    // });
 
     it("create a phone", done => {
       request(done, async res => {
@@ -98,21 +98,21 @@ describe("POST /api/v1/signup", () => {
       });
     });
 
-    it("creates one member", done => {
-      request(done, async res => {
-        let members = await Models.Member.count();
-        members.should.be.eql(1);
-        done();
-      });
-    });
+    // it("creates one member", done => {
+    //   request(done, async res => {
+    //     let members = await Models.Member.count();
+    //     members.should.be.eql(1);
+    //     done();
+    //   });
+    // });
 
-    it("creates one user", done => {
-      request(done, async res => {
-        let users = await Models.User.count();
-        users.should.be.eql(1);
-        done();
-      });
-    });
+    // it("creates one user", done => {
+    //   request(done, async res => {
+    //     let users = await Models.User.count();
+    //     users.should.be.eql(1);
+    //     done();
+    //   });
+    // });
 
     it("not create a phone", done => {
       request(done, async res => {
