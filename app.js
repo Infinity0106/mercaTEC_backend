@@ -7,6 +7,7 @@ var cors = require("cors");
 // var session = require("client-sessions");
 var RateLimit = require("express-rate-limit");
 var params = require("strong-params");
+var fs = require("fs");
 
 //load env variables
 require("dotenv").load();
@@ -21,6 +22,10 @@ var limiter = new RateLimit({
   max: 10000, // limit each IP to 100 requests per windowMs
   delayMs: 0 // disable delaying - full speed until the max limit is reached
 });
+
+if (!fs.existsSync('./uploads')){
+  fs.mkdirSync('./uploads');
+}
 
 app.enable("trust proxy");
 
