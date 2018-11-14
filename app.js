@@ -23,8 +23,8 @@ var limiter = new RateLimit({
   delayMs: 0 // disable delaying - full speed until the max limit is reached
 });
 
-if (!fs.existsSync('./uploads')){
-  fs.mkdirSync('./uploads');
+if (!fs.existsSync("./uploads")) {
+  fs.mkdirSync("./uploads");
 }
 
 app.enable("trust proxy");
@@ -61,7 +61,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use("/", shared_routes);
+app.use("/uploads", shared_routes);
 app.use("/api/v1", indexRouterV1);
 
 // catch 404 and forward to error handler
