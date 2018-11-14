@@ -40,8 +40,14 @@ app.use(params.expressMiddleware());
 // );
 
 // view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "jade");
+// app.set("views", path.join(__dirname, "views"));
+// app.set("view engine", "jade");
+
+app.use(express.static(path.join(__dirname, "client/build")));
+
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 
 if (process.env.NODE_ENV != "test") {
   app.use(logger("dev"));
