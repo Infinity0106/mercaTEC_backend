@@ -13,5 +13,7 @@
   "20181010015348-AddUserIdProduct.js",
   "20181101012459-create-shopping-bags.js",
   "20181101013138-create-shopping-bag-products.js",
-  "20181103040938-create-goals.js"
+  "20181103040938-create-goals.js",
+  "20181112170614-create-sell.js",
+  "20181113160556-AddUserSell.js"
 ]

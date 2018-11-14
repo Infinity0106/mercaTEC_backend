@@ -1,37 +1,35 @@
 const sequelize = require("./../../../../../models").sequelize;
-const ShoppingBag = require("./../../../../../models").ShoppingBag;
-const ShoppingBagProduct = require("./../../../../../models")
-  .ShoppingBagProduct;
 const Product = require("./../../../../../models").Product;
 const Image = require("./../../../../../models").Image;
 
 module.exports = async function(req, res, next) {
   let transaction;
   try {
+    req.parameters.permit("id");
     transaction = await sequelize.transaction();
-
     let user = req.locals.current_user;
-    let shopping_bag = await ShoppingBag.findOne({
-      where: {
-        user_id: user.id
-      },
+
+    let sells = await user.getSells({
       include: [
         {
-          model: ShoppingBagProduct,
-          as: "ShoppingBagItems",
+          model: Product,
+          as: "Product",
           include: [
-            { model: Product, as: "Product", include: [{ model: Image }] }
+            {
+              model: Image,
+              limit: 1
+            }
           ]
         }
-      ],
-      transaction
+      ]
     });
-    let response = shopping_bag ? shopping_bag.serialize() : {};
+
+    let response = sells.map(ele => ele.serialize());
 
     res.status(200).send(response);
     await transaction.commit();
   } catch (e) {
-    await transaction.rollback();
+    if (transaction) await transaction.rollback();
     errors = e.errors ? e.errors.map(element => element.message) : [e.message];
     res.status(500).send({ errors });
   }

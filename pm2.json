@@ -10,7 +10,8 @@
         "yarn.lock",
         "package.json",
         ".env",
-        "uploads"
+        "uploads",
+        "client"
       ],
       "instances": "1"
     }

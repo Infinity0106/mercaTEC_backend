@@ -16,7 +16,10 @@ module.exports = async function(req, res, next) {
       where: {
         user_id: user.id
       },
-      transaction
+      defaults: {
+        user_id: user.id,
+        total: 0
+      }
     });
 
     let product = await Product.findById(req.body.product_id);

@@ -28,7 +28,6 @@ module.exports = (sequelize, DataTypes) => {
       schema: "public",
       hooks: {
         afterCreate: async (instance, opt) => {
-          // Do other stuff
           let product = await instance.getProduct();
           let shopping_bag = await instance.getShoppingBag();
 
@@ -39,9 +38,6 @@ module.exports = (sequelize, DataTypes) => {
           });
         },
         beforeDestroy: async (instance, opt) => {
-          console.log("🛠🛠🛠🛠🛠");
-          console.log("entro");
-          console.log("🛠🛠🛠🛠🛠");
           let product = await instance.getProduct();
           let shopping_bag = await instance.getShoppingBag();
 
@@ -50,6 +46,18 @@ module.exports = (sequelize, DataTypes) => {
               parseFloat(shopping_bag.total) - parseFloat(product.price)
             ).toFixed(2)
           });
+        },
+        beforeBulkDestroy: async ({ where }) => {
+          sequelize.models.ShoppingBag.update(
+            {
+              total: 0
+            },
+            {
+              where: {
+                id: where.shopping_bag_id
+              }
+            }
+          );
         }
       }
     }

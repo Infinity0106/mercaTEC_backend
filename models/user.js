@@ -180,6 +180,12 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "user_id",
       constraints: false
     });
+
+    User.hasMany(models.Sell, {
+      as: "sells",
+      foreignKey: "user_id",
+      constraints: false
+    });
   };
   return User;
 };
