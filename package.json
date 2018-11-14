@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "pm2-dev start pm2.json",
+    "start": "node ./bin/www",
     "pm2-start": "pm2-dev start pm2.json",
     "publish_docs": "./setup_doc.sh documentation.md && cd slate && bundle exec middleman build --clean && cd .. && rm -rf ./docs && cp -R ./slate/build ./docs",
     "test": "NODE_ENV=test PORT=1996 mocha --timeout 3000 --recursive ./test/controllers/root_hook.test.js ./test --exit",
