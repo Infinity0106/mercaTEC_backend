@@ -56,9 +56,7 @@ module.exports = (sequelize, DataTypes) => {
     return Object.assign(
       {
         id: this.id,
-        path: `http://${ip.address()}:${process.env.PORT || "3000"}/${
-          this.path
-        }`
+        path: this.path
       },
       opt
     );
