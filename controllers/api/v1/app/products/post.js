@@ -9,13 +9,6 @@ cloudinary.config({
   api_secret: "Mdn10ffBtZBZqRBiQCgdM5ZhCJU"
 });
 
-// const config = {
-//   bucketName: "mercatec",
-//   region: "us-east-1",
-//   accessKeyId: "AKIAJ5HITGR7OJAJMY4Q",
-//   secretAccessKey: "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"
-// };
-
 module.exports = async function(req, res, next) {
   let transaction;
   try {
