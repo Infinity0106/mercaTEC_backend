@@ -49,9 +49,14 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
 app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "docs")));
 
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+app.get("/docs", function(req, res) {
+  res.sendFile(path.join(__dirname, "docs", "index.html"));
 });
 
 if (process.env.NODE_ENV != "test") {

@@ -223,10 +223,58 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
           </li>
           <li>
-            <a href="#user-app" class="toc-h1 toc-link" data-title="user-app">User app</a>
+            <a href="#user" class="toc-h1 toc-link" data-title="user">User</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#forgot-password" class="toc-h2 toc-link" data-title="forgot-password">Forgot password</a>
+                  </li>
+                  <li>
+                    <a href="#log-in" class="toc-h2 toc-link" data-title="log-in">Log in</a>
+                  </li>
+                  <li>
+                    <a href="#log-out" class="toc-h2 toc-link" data-title="log-out">Log out</a>
+                  </li>
+                  <li>
+                    <a href="#reset-password" class="toc-h2 toc-link" data-title="reset-password">Reset password</a>
+                  </li>
+                  <li>
                     <a href="#sign-up" class="toc-h2 toc-link" data-title="sign-up">Sign up</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#images" class="toc-h1 toc-link" data-title="images">Images</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#delete-image" class="toc-h2 toc-link" data-title="delete-image">delete image</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#products" class="toc-h1 toc-link" data-title="products">Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-product" class="toc-h2 toc-link" data-title="create-a-product">Create a product</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-product" class="toc-h2 toc-link" data-title="delete-a-product">Delete a product</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-products" class="toc-h2 toc-link" data-title="get-all-products">Get all products</a>
+                  </li>
+                  <li>
+                    <a href="#get-single-product" class="toc-h2 toc-link" data-title="get-single-product">Get single product</a>
+                  </li>
+                  <li>
+                    <a href="#update-product" class="toc-h2 toc-link" data-title="update-product">Update product</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#qr" class="toc-h1 toc-link" data-title="qr">Qr</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-file" class="toc-h2 toc-link" data-title="get-file">get file</a>
                   </li>
               </ul>
           </li>
@@ -241,23 +289,59 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>backend de desarrollo de aplicaciones web</p>
-<h1 id='user-app'>User app</h1><h2 id='sign-up'>Sign up</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+<h1 id='user'>User</h1><h2 id='forgot-password'>Forgot password</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
   <span class="s2">"user"</span>: <span class="o">{</span>
-    <span class="s2">"email"</span>: <span class="s2">"Armando.Rodriguez@hotmail.com"</span>,
-    <span class="s2">"password"</span>: <span class="s2">"SNpvNfJukgRswy_"</span>,
-    <span class="s2">"username"</span>: <span class="s2">"Elwin_Lowe79"</span>,
-    <span class="s2">"password_confirmation"</span>: <span class="s2">"SNpvNfJukgRswy_"</span>
+    <span class="s2">"user_handler"</span>: <span class="s2">"infinity0106"</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">200</span><span class="o">*</span>
 <span class="p">{</span>
-  <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFlMmIwMTFhLTM5YmUtNGQ5Yy05NDA2LWFmNzY4NDZiYjBlMiIsInVzZXJuYW1lIjoiSmF5bWUzNCIsImVtYWlsIjoiRGVlLkhlcnpvZ0B5YWhvby5jb20iLCJpYXQiOjE1MzQxMTU3MDR9.EYwVVAv25gouuXmdmTjW0rhntAHYkKbOqGbhBT66APY"</span>
+  <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"750327"</span>
 <span class="p">}</span>
 </code></pre>
-<p>backend de portelo</p>
+<p>The user.user_handler can be username or email</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST /api/v1/login</code></p>
+<p><code>POST /api/v1/forgot</code></p>
 <h3 id='headers'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x-application</td>
+<td>app</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json; charset=utf-8</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='log-in'>Log in</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"user"</span>: <span class="o">{</span>
+    <span class="s2">"user_handler"</span>: <span class="s2">"infinity0106"</span>,
+    <span class="s2">"player_id"</span>: <span class="s2">"36450a3f-5c99-4821-9237-f74de5666ea6"</span>,
+    <span class="s2">"password"</span>: <span class="s2">"1234567890"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">200</span><span class="o">*</span>
+<span class="p">{</span>
+  <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNjI2NmVkLTM2NTctNDU1MS1iN2RmLWZjMDhiNjAwYWQxZiIsInVzZXJuYW1lIjoiaW5maW5pdHkwMTA2IiwiZW1haWwiOiJiZXJueS5vcm96Y29AaG90bWFpbC5jb20iLCJ0b2tlbiI6IjM4ODc3OSIsImlhdCI6MTU0MzQyODczNH0.BLl033ASFeHgJh2fEYuK9yPQsUgThJGyT7P5P9ugdWA"</span>
+<span class="p">}</span>
+</code></pre>
+<p>The user.user_handler can be username or email </p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST /api/v1/login</code></p>
+<h3 id='headers-2'>HEADERS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -271,6 +355,484 @@
 <tr>
 <td>Content-Type</td>
 <td>application/json; charset=utf-8</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='log-out'>Log out</h2><pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">204</span><span class="o">*</span>
+
+</code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>DELETE /api/v1/logout</code></p>
+<h3 id='headers-3'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNjI2NmVkLTM2NTctNDU1MS1iN2RmLWZjMDhiNjAwYWQxZiIsInVzZXJuYW1lIjoiaW5maW5pdHkwMTA2IiwiZW1haWwiOiJiZXJueS5vcm96Y29AaG90bWFpbC5jb20iLCJ0b2tlbiI6IjM4ODc3OSIsImlhdCI6MTU0MzQyODczNH0.BLl033ASFeHgJh2fEYuK9yPQsUgThJGyT7P5P9ugdWA</td>
+</tr>
+<tr>
+<td>X-Application</td>
+<td>app</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='reset-password'>Reset password</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"user"</span>: <span class="o">{</span>
+    <span class="s2">"password_confirmation"</span>: <span class="s2">"0987654321"</span>,
+    <span class="s2">"password"</span>: <span class="s2">"0987654321"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">204</span><span class="o">*</span>
+
+</code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT /api/v1/forgot/750327</code></p>
+<h3 id='headers-4'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x-application</td>
+<td>app</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json; charset=utf-8</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='sign-up'>Sign up</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"user"</span>: <span class="o">{</span>
+    <span class="s2">"email"</span>: <span class="s2">"berny.orozco@hotmail.com"</span>,
+    <span class="s2">"password"</span>: <span class="s2">"1234567890"</span>,
+    <span class="s2">"username"</span>: <span class="s2">"infinity0106"</span>,
+    <span class="s2">"password_confirmation"</span>: <span class="s2">"1234567890"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">200</span><span class="o">*</span>
+<span class="p">{</span>
+  <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNjI2NmVkLTM2NTctNDU1MS1iN2RmLWZjMDhiNjAwYWQxZiIsInVzZXJuYW1lIjoiaW5maW5pdHkwMTA2IiwiZW1haWwiOiJiZXJueS5vcm96Y29AaG90bWFpbC5jb20iLCJ0b2tlbiI6IjM1OTEzMSIsImlhdCI6MTU0MzQyODczMn0.BVGvbsnO5BzoEqcGqaxsjrAk91-ML-vjG-56TiSY3ho"</span>
+<span class="p">}</span>
+</code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST /api/v1/signup</code></p>
+<h3 id='headers-5'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Application</td>
+<td>app</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json; charset=utf-8</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h1 id='images'>Images</h1><h2 id='delete-image'>delete image</h2><pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">204</span><span class="o">*</span>
+
+</code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>DELETE /api/v1/images/3e299013-4a02-4882-815f-5ceb76eb0b57</code></p>
+<h3 id='headers'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Application</td>
+<td>app</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNjI2NmVkLTM2NTctNDU1MS1iN2RmLWZjMDhiNjAwYWQxZiIsInVzZXJuYW1lIjoiaW5maW5pdHkwMTA2IiwiZW1haWwiOiJiZXJueS5vcm96Y29AaG90bWFpbC5jb20iLCJ0b2tlbiI6IjM1OTEzMSIsImlhdCI6MTU0MzQyODczMn0.BVGvbsnO5BzoEqcGqaxsjrAk91-ML-vjG-56TiSY3ho</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h1 id='products'>Products</h1><h2 id='create-a-product'>Create a product</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"images[]"</span>: <span class="s2">""</span>,
+  <span class="s2">"description"</span>: <span class="s2">"este es lo mismo pero mas caro"</span>,
+  <span class="s2">"name"</span>: <span class="s2">"producto 1"</span>,
+  <span class="s2">"price"</span>: <span class="s2">"20"</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">204</span><span class="o">*</span>
+
+</code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST /api/v1/products</code></p>
+<h3 id='headers'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Application</td>
+<td>app</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNjI2NmVkLTM2NTctNDU1MS1iN2RmLWZjMDhiNjAwYWQxZiIsInVzZXJuYW1lIjoiaW5maW5pdHkwMTA2IiwiZW1haWwiOiJiZXJueS5vcm96Y29AaG90bWFpbC5jb20iLCJ0b2tlbiI6IjM1OTEzMSIsImlhdCI6MTU0MzQyODczMn0.BVGvbsnO5BzoEqcGqaxsjrAk91-ML-vjG-56TiSY3ho</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>multipart/form-data; charset=utf-8; boundary=<strong>X_PAW_BOUNDARY</strong></td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='delete-a-product'>Delete a product</h2><pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">204</span><span class="o">*</span>
+
+</code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>DELETE /api/v1/products/fe142f44-11e2-4c73-8f63-492cc3e39808</code></p>
+<h3 id='headers-2'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Application</td>
+<td>app</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNjI2NmVkLTM2NTctNDU1MS1iN2RmLWZjMDhiNjAwYWQxZiIsInVzZXJuYW1lIjoiaW5maW5pdHkwMTA2IiwiZW1haWwiOiJiZXJueS5vcm96Y29AaG90bWFpbC5jb20iLCJ0b2tlbiI6IjM1OTEzMSIsImlhdCI6MTU0MzQyODczMn0.BVGvbsnO5BzoEqcGqaxsjrAk91-ML-vjG-56TiSY3ho</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='get-all-products'>Get all products</h2><pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">200</span><span class="o">*</span>
+<span class="p">{</span>
+  <span class="s2">"products"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"fe142f44-11e2-4c73-8f63-492cc3e39808"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"producto 1"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"este es lo mismo pero mas caro"</span><span class="p">,</span>
+      <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20.00"</span><span class="p">,</span>
+      <span class="s2">"images"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"3e299013-4a02-4882-815f-5ceb76eb0b57"</span><span class="p">,</span>
+          <span class="s2">"path"</span><span class="p">:</span> <span class="s2">"http://res.cloudinary.com/djadcipba/image/upload/v1543429227/eu53n3gzcr0oah2d9jkx.png"</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"current_page"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="s2">"total_pages"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"total_products"</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET /api/v1/products?page=1</code></p>
+<h3 id='headers-3'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Application</td>
+<td>app</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNjI2NmVkLTM2NTctNDU1MS1iN2RmLWZjMDhiNjAwYWQxZiIsInVzZXJuYW1lIjoiaW5maW5pdHkwMTA2IiwiZW1haWwiOiJiZXJueS5vcm96Y29AaG90bWFpbC5jb20iLCJ0b2tlbiI6IjM1OTEzMSIsImlhdCI6MTU0MzQyODczMn0.BVGvbsnO5BzoEqcGqaxsjrAk91-ML-vjG-56TiSY3ho</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h2 id='get-single-product'>Get single product</h2><pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">200</span><span class="o">*</span>
+<span class="p">{</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"fe142f44-11e2-4c73-8f63-492cc3e39808"</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"producto 1 editado"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"descripcion"</span><span class="p">,</span>
+  <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"20.00"</span><span class="p">,</span>
+  <span class="s2">"images"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"3e299013-4a02-4882-815f-5ceb76eb0b57"</span><span class="p">,</span>
+      <span class="s2">"path"</span><span class="p">:</span> <span class="s2">"http://res.cloudinary.com/djadcipba/image/upload/v1543429227/eu53n3gzcr0oah2d9jkx.png"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"1821194e-e6b2-4080-af1c-b15bd8592ce8"</span><span class="p">,</span>
+      <span class="s2">"path"</span><span class="p">:</span> <span class="s2">"uploads/1543429403_2.png"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET /api/v1/products/fe142f44-11e2-4c73-8f63-492cc3e39808</code></p>
+<h3 id='headers-4'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Application</td>
+<td>app</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNjI2NmVkLTM2NTctNDU1MS1iN2RmLWZjMDhiNjAwYWQxZiIsInVzZXJuYW1lIjoiaW5maW5pdHkwMTA2IiwiZW1haWwiOiJiZXJueS5vcm96Y29AaG90bWFpbC5jb20iLCJ0b2tlbiI6IjM1OTEzMSIsImlhdCI6MTU0MzQyODczMn0.BVGvbsnO5BzoEqcGqaxsjrAk91-ML-vjG-56TiSY3ho</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='update-product'>Update product</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"name"</span>: <span class="s2">"producto 1 editado"</span>,
+  <span class="s2">"description"</span>: <span class="s2">"descripcion"</span>,
+  <span class="s2">"price"</span>: <span class="s2">"20"</span>,
+  <span class="s2">"images[]"</span>: <span class="s2">""</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">204</span><span class="o">*</span>
+
+</code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>PUT /api/v1/products/fe142f44-11e2-4c73-8f63-492cc3e39808</code></p>
+<h3 id='headers-5'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Application</td>
+<td>app</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNjI2NmVkLTM2NTctNDU1MS1iN2RmLWZjMDhiNjAwYWQxZiIsInVzZXJuYW1lIjoiaW5maW5pdHkwMTA2IiwiZW1haWwiOiJiZXJueS5vcm96Y29AaG90bWFpbC5jb20iLCJ0b2tlbiI6IjM1OTEzMSIsImlhdCI6MTU0MzQyODczMn0.BVGvbsnO5BzoEqcGqaxsjrAk91-ML-vjG-56TiSY3ho</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>multipart/form-data; charset=utf-8; boundary=<strong>X_PAW_BOUNDARY</strong></td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h1 id='qr'>Qr</h1><h2 id='get-file'>get file</h2><pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">response</span> <span class="nx">status</span> <span class="o">*</span><span class="mi">200</span><span class="o">*</span>
+<span class="err"></span><span class="nx">PNG</span>
+<span class="err"></span>
+<span class="err">   </span>
+<span class="nx">IHDR</span><span class="err">  è  è   </span><span class="nx">M</span><span class="err">£Ôä  </span><span class="nx">IDATx</span><span class="err">ìÁ</span><span class="nx">A</span><span class="err"></span><span class="nx">$</span><span class="err"></span><span class="mi">0</span><span class="nx">sG</span><span class="err">ýÿË¾</span>
+<span class="err"></span><span class="err">©</span>
+<span class="err"></span><span class="o">&amp;</span><span class="mi">9</span><span class="err">÷</span><span class="nx">G</span><span class="err">   ª</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨û</span> <span class="nx">_gf</span><span class="err">»</span><span class="err">ß</span><span class="nx">cf</span><span class="err">ò»</span><span class="err">¼ÑÝå</span><span class="nx">f</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»¼ÑÌþ</span><span class="o">&amp;</span><span class="nx">w</span><span class="err">¾Ç   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="p">?</span><span class="err"></span><span class="nx">pw</span><span class="err">ßÌ</span><span class="nx">L</span><span class="err">øÌÌä</span><span class="p">)</span><span class="nx">w</span><span class="err"></span><span class="mi">7</span><span class="err"></span><span class="o">&lt;</span><span class="err">åîò</span><span class="nx">Fw</span><span class="err"></span><span class="mi">7</span><span class="err">¼ÑÝï</span><span class="nx">qw</span><span class="err">ßÌ</span><span class="nx">L</span><span class="err">à</span><span class="mi">7</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ôýþ</span><span class="o">%</span><span class="nx">f</span><span class="o">&amp;|</span><span class="err">æîÂ</span><span class="nx">gf</span><span class="o">&amp;</span><span class="nx">o43y</span><span class="err">ÊÝÏÌ</span><span class="nx">L</span><span class="err"></span><span class="nx">rwy</span><span class="err">ÊÌä</span><span class="p">)</span><span class="nx">w</span><span class="err"></span><span class="mi">7</span><span class="err">¼ÑÝÏÌ</span><span class="nx">L</span><span class="err">øÌÝÚ</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨û</span> <span class="err"> </span><span class="nx">w</span><span class="err">øÍÝåî</span><span class="p">.</span><span class="nx">O</span><span class="err">¼ÑÝå</span><span class="p">)</span><span class="mi">3</span><span class="err"> µ   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý</span><span class="nx">O</span><span class="err"> à</span><span class="nx">hf</span><span class="err">¿¹»ðÉ</span><span class="nx">S</span><span class="err">î</span><span class="p">.</span><span class="err"> </span><span class="o">&lt;</span><span class="nx">k</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   ºÀ¿ÄÝþ</span><span class="o">&amp;</span><span class="mi">3</span><span class="err">§Ü</span><span class="p">]</span><span class="err"></span><span class="nx">rwy</span><span class="err">ÊÌ</span><span class="o">~</span><span class="nx">sw</span><span class="err">¿ÉÝø</span><span class="o">~</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   ÔýþÁÌøÿ</span><span class="nx">qwy</span><span class="err">ÊÌä</span><span class="p">)</span><span class="nx">w</span><span class="err"></span><span class="mi">7</span><span class="err">º»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò»Ë</span><span class="nx">Sf</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò»Ë</span><span class="nx">Sf</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»¼ÑÌà¿±   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">ÝÜà</span><span class="p">?</span><span class="nx">f</span><span class="o">&amp;</span><span class="nx">otwy</span><span class="err">£ÉÝ</span><span class="p">]</span><span class="err"></span><span class="mi">23</span><span class="nx">y</span><span class="err">ÊÝÏÌ</span><span class="nx">L</span><span class="err">Þèî</span><span class="p">@</span><span class="err">²   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">ÝÜá«Ì</span><span class="nx">L</span><span class="err"></span><span class="nx">rwy</span><span class="err">ÊÌ</span><span class="o">~</span><span class="nx">swy</span><span class="err">£</span> <span class="err">ßãîò</span>    <span class="err">üæîÂ</span><span class="nx">gf</span><span class="o">&amp;</span><span class="err">ð»</span><span class="err">´</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">÷¾ÎÝÏÜ</span><span class="p">]</span><span class="err"></span><span class="mi">23</span><span class="nx">y</span><span class="err">ÊÝå</span><span class="nx">f</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»</span><span class="o">&lt;</span><span class="err">åî¿¹»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò»</span><span class="err">¼ÑÝåî</span><span class="p">.</span><span class="nx">O</span><span class="err">¼ÑÝå</span><span class="nx">f</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»ð</span><span class="o">=</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨û</span> <span class="err">ü</span><span class="nx">f</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">Â</span><span class="nx">gf</span><span class="o">&amp;</span><span class="err">ð»</span><span class="err">´Ý</span><span class="p">]</span><span class="err">Þ</span><span class="nx">hf</span><span class="err">ò»Ë</span><span class="nx">Sf</span><span class="o">&amp;</span><span class="nx">otwy</span><span class="err">£É</span><span class="nx">S</span><span class="err">î</span><span class="p">.</span><span class="err">ð</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="o">~</span><span class="err">Â×ð</span><span class="o">=</span><span class="nx">f</span><span class="o">&amp;</span><span class="nx">otwy</span><span class="err">£É</span><span class="nx">S</span><span class="err">î</span><span class="p">.</span><span class="nx">O</span><span class="err"></span><span class="o">&lt;</span><span class="err">åîÂ</span><span class="nx">gf</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò»Ë</span><span class="nx">Sf</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»ð</span>   <span class="err">üæî</span><span class="nx">m</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   ÔÍý¾ÊÌä</span><span class="p">)</span><span class="nx">w</span><span class="err">§Ì</span><span class="nx">L</span><span class="err">à</span><span class="mi">7</span><span class="nx">w</span><span class="err"></span><span class="mi">7</span><span class="err"></span><span class="o">&lt;</span><span class="err">åîòÉÝ</span><span class="p">]</span><span class="err">ø</span><span class="mi">3</span><span class="err">øÍÝÏÌ</span><span class="nx">L</span><span class="err">øÌÝ</span><span class="o">~</span><span class="err">³   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý</span><span class="nx">O</span><span class="err">ø</span><span class="p">:</span><span class="nx">w</span><span class="err">§Ì</span><span class="nx">L</span><span class="err"></span><span class="nx">rwy</span><span class="err">ÊÌÏÜ</span><span class="p">]</span><span class="err"></span><span class="mi">23</span><span class="nx">y</span><span class="err">£»Ë</span><span class="nx">Sf</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»¼ÑÌÏÜ</span><span class="p">]</span><span class="err">ÞèîòÉ</span><span class="nx">S</span><span class="err">î</span><span class="p">.</span><span class="nx">O</span><span class="err"></span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">Â</span><span class="nx">g</span><span class="err">î</span><span class="p">.</span><span class="o">|</span><span class="nx">ff</span><span class="err">ò»</span><span class="err">ß</span><span class="nx">c</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   ºÀ</span><span class="p">?</span><span class="err">¸»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò</span><span class="nx">Fw</span><span class="err"></span><span class="mi">7</span><span class="err">ðÉ</span><span class="nx">S</span><span class="err">î</span><span class="p">.</span><span class="nx">o43</span><span class="err">á</span><span class="mi">3</span><span class="nx">w</span><span class="err">§Ì</span><span class="nx">L</span><span class="err"></span><span class="nx">rwy</span><span class="err">ÊÌä</span><span class="p">)</span><span class="nx">w</span><span class="err">§Ì</span><span class="nx">L</span><span class="err"></span><span class="nx">rwy</span><span class="err">ÊÌï</span><span class="mi">13</span><span class="nx">y</span><span class="err">£»</span><span class="err">ü</span><span class="nx">f</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   ºÀ</span><span class="p">?</span><span class="err"></span><span class="o">&lt;</span><span class="err">åîò</span><span class="nx">F3</span><span class="err"></span><span class="mi">7</span><span class="err">º»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò»Ë</span><span class="nx">Sf</span><span class="o">&amp;</span><span class="err">ð»Ë</span><span class="nx">Sf</span><span class="o">&amp;|</span><span class="err">æîÂ÷¸»¼ÑÌä</span><span class="p">)</span><span class="mi">3</span><span class="err">§Ü</span><span class="p">]</span><span class="err">à</span><span class="nx">o</span><span class="err">²   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">ÝÜÉÝ</span><span class="p">]</span><span class="err">Þ</span><span class="nx">hf</span><span class="err">ò»Ë</span><span class="nx">Sf</span><span class="o">&amp;|</span><span class="err">»ËÍ</span><span class="nx">L</span><span class="err"> íîòÉ</span><span class="nx">S</span><span class="err">î</span><span class="p">.</span><span class="nx">O</span><span class="err"></span><span class="o">&lt;</span><span class="err">åîò</span><span class="nx">F3</span><span class="err">§Ü</span><span class="p">]</span><span class="err"> </span><span class="nx">m</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º¹</span><span class="p">?</span><span class="err">Â</span><span class="nx">W</span><span class="err">¼ÑÝ</span><span class="o">~</span><span class="mi">33</span><span class="nx">y</span><span class="err">ÊÝþ</span><span class="o">&amp;</span><span class="mi">3</span><span class="err">§Ü</span><span class="p">]</span><span class="err">øÌÌä</span><span class="p">)</span><span class="nx">w</span><span class="err"></span><span class="mi">7</span><span class="err"></span><span class="o">&lt;</span><span class="err">åîòÉÝ</span><span class="p">]</span><span class="err"></span><span class="mi">23</span><span class="nx">y</span><span class="err">£»</span><span class="err">ß</span><span class="nx">c</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   ºÀ</span><span class="p">?</span><span class="err">¸»ð</span><span class="o">=</span><span class="nx">f</span><span class="o">&amp;</span><span class="nx">otw</span><span class="err">á</span><span class="mi">33</span><span class="err"></span><span class="mi">7</span><span class="err">º»À</span><span class="nx">of</span><span class="o">&amp;</span><span class="nx">otwy</span><span class="err">ÊÌä</span><span class="p">)</span><span class="nx">w</span><span class="err">§Ü</span><span class="p">]</span><span class="err"></span><span class="mi">23</span><span class="nx">y</span><span class="err">£»Ë</span><span class="nx">Sf</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»</span><span class="p">@</span><span class="err">Û   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="p">?</span><span class="err">É</span><span class="nx">S</span><span class="err">î</span><span class="p">.</span><span class="nx">O</span><span class="err">¼ÑÝå</span><span class="p">)</span><span class="mi">3</span><span class="err"></span><span class="mi">7</span><span class="err">º»ðÉ</span><span class="nx">S</span><span class="err">î</span><span class="p">.</span><span class="nx">O</span><span class="err">ð»Ë</span><span class="nx">Sf</span><span class="o">&amp;</span><span class="nx">O</span><span class="err"></span><span class="o">&lt;</span><span class="err">åîòÉ</span><span class="nx">S</span><span class="err">î</span><span class="p">.</span><span class="nx">O</span><span class="err">¹»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò</span><span class="nx">Fw</span><span class="err">§Ì</span><span class="nx">L</span><span class="err">ÞèîÂ÷Ø    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">îð</span><span class="nx">Uf</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»¼ÑÌï</span><span class="nx">qwy</span><span class="err">ÊÌä</span><span class="p">)</span><span class="nx">w</span><span class="err"></span><span class="mi">7</span><span class="err">¼ÑÝå</span><span class="nx">f</span><span class="o">&amp;|</span><span class="err">æîò</span><span class="nx">F3</span><span class="err">øÜ</span><span class="p">]</span><span class="err"> </span><span class="nx">m</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º¹</span><span class="p">?</span><span class="err">ÀÌ</span><span class="nx">L</span><span class="err">øÌÝå</span><span class="p">)</span><span class="mi">3</span><span class="err">¾ÇÝå</span><span class="nx">f</span><span class="o">&amp;|</span><span class="err">æîÂ</span><span class="nx">gf</span><span class="o">&amp;</span><span class="nx">otwy</span><span class="err">ÊÌäî</span><span class="p">.</span><span class="o">|</span><span class="err"></span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="o">~</span><span class="err">Â×Àßäîò»ËÍ</span><span class="nx">L</span><span class="err">Þèîò</span>   <span class="err"></span><span class="p">@</span><span class="err">ÛÌä</span><span class="p">)</span><span class="nx">w</span><span class="err"></span><span class="mi">7</span><span class="err">º»¼ÑÝÚ</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨û</span> <span class="err">ü»</span><span class="err">ü</span><span class="nx">ff</span><span class="err">ò</span><span class="nx">F3</span><span class="err"></span><span class="nx">h</span><span class="err">»»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò</span><span class="nx">Fw</span><span class="err"></span><span class="o">&gt;</span><span class="mi">33</span><span class="nx">y</span><span class="err">£»</span><span class="err">´Í</span><span class="nx">L</span><span class="err"></span><span class="nx">rw</span><span class="err">á</span><span class="p">{</span><span class="nx">l</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">÷øð»</span><span class="err">ßãîÂ÷¸»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò</span><span class="nx">Fw</span><span class="err">§Ì</span><span class="nx">L</span><span class="err"></span><span class="nx">rw</span><span class="err">á</span><span class="mi">33</span><span class="err">¾ÇÌäî</span><span class="p">.</span><span class="err">Ð¶   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý</span><span class="nx">O</span><span class="err"> à</span><span class="nx">hf</span><span class="err">ò»Ë</span><span class="nx">Sf</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»¼ÑÌä</span><span class="p">)</span><span class="nx">w</span><span class="err">§Ì</span><span class="nx">L</span><span class="err">øÌÝå</span><span class="nx">f</span><span class="o">&amp;</span><span class="nx">O</span><span class="err">¹»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò»ËÝ</span><span class="p">]</span><span class="err">à</span><span class="mi">7</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ôý þî</span><span class="p">.</span><span class="nx">O</span><span class="err">¼ÑÌÏÌ</span><span class="nx">L</span><span class="err">øÌÝå</span><span class="p">)</span><span class="mi">3</span><span class="err"></span><span class="mi">7</span><span class="err">º»</span><span class="o">&lt;</span><span class="nx">ef</span><span class="err">ò»ËÍ</span><span class="nx">L</span><span class="err"></span><span class="nx">rw</span><span class="err">ß</span><span class="nx">l</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">   Ô</span><span class="nx">m</span><span class="err">   º</span>
+<span class="err">   </span><span class="nx">P</span><span class="err">·   ê</span><span class="mi">6</span><span class="err">   </span><span class="p">@</span><span class="err">Ý   ¨Û    </span><span class="nx">u</span><span class="err">    </span><span class="nx">n</span><span class="err">ÿ</span><span class="p">{</span><span class="nx">Gx</span><span class="err">½  </span><span class="nx">IDAT</span><span class="err">¯</span><span class="o">=</span><span class="mi">80</span><span class="err">Ã</span><span class="nx">b</span><span class="err"> æ</span><span class="nx">g</span><span class="err">²ÿÊ¿</span> <span class="err"></span><span class="nx">J</span><span class="err">áÜ\</span><span class="nx">$</span><span class="err">   </span><span class="nx">k</span><span class="err">   ¹   </span><span class="nx">k</span><span class="err">   ¹   </span><span class="nx">k</span><span class="err">   ¹   </span><span class="nx">k</span><span class="err">   ¹   </span><span class="nx">k</span><span class="err">   ¹   ûø</span><span class="nx">x</span><span class="err">ïÖÞ</span><span class="p">{</span><span class="err">ù</span><span class="nx">Fw</span><span class="err">þï½À¯Ü</span><span class="p">]</span><span class="o">&gt;</span><span class="err">åîòÞ</span><span class="p">{</span><span class="err">ù»</span><span class="err">À¿Ñ    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">×    </span><span class="nx">s</span>
+<span class="err">   </span><span class="mi">0</span><span class="err">÷#ð</span><span class="nx">w</span><span class="err">øÜ</span><span class="p">]</span><span class="err">¾Ñ</span><span class="p">{</span><span class="sr">/rwù÷^¾ÑÝ~å½þ»Ë7zïåÝ]&gt;å½Xk   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   »÷S   ©   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   k   ¹   û</span><span class="err">
+</span><span class="nx">G</span><span class="err">Ê</span><span class="o">&gt;</span><span class="nx">$</span><span class="err">Ô±    </span><span class="nx">IEND</span><span class="err">®</span><span class="nx">B</span><span class="s2">`
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /api/v1/products/fe142f44-11e2-4c73-8f63-492cc3e39808/qr</code></p>
+<h3 id='headers'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Application</td>
+<td>app</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNjI2NmVkLTM2NTctNDU1MS1iN2RmLWZjMDhiNjAwYWQxZiIsInVzZXJuYW1lIjoiaW5maW5pdHkwMTA2IiwiZW1haWwiOiJiZXJueS5vcm96Y29AaG90bWFpbC5jb20iLCJ0b2tlbiI6IjM1OTEzMSIsImlhdCI6MTU0MzQyODczMn0.BVGvbsnO5BzoEqcGqaxsjrAk91-ML-vjG-56TiSY3ho</td>
 </tr>
 </tbody></table>
 <h3 id='url-parameters'>URL Parameters</h3>
